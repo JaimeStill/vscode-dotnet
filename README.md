@@ -436,11 +436,13 @@ Execute the following:
 .\crypto.exe generate-nft
 ```
 
-This should output a 
+You should see output similar to the following:
+
+![image](https://user-images.githubusercontent.com/14102723/170603489-11dc2aaf-9b48-4c8a-b460-c4774b1e7379.png)
 
 ## Debugging
 
-To generate a debug config, press <kbd>Ctrl + Shift + D</kbd> to open the **Run and Debug** view in the sidebar, then click the *create a launch.json* file:
+To generate a debug config, press <kbd>Ctrl + Shift + D</kbd> to open the **Run and Debug** view in the sidebar, then click the *create a launch.json* link:
 
 ![image](https://user-images.githubusercontent.com/14102723/170599729-38afeb62-00fd-4bc7-aec2-5c463524e409.png)
 

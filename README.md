@@ -35,7 +35,7 @@ Ensure the following OmniSharp settings are enabled:
     * Enables support for roslyn analyzers, code fixes and rulesets.
     * See [Overview of Source Code Analysis](https://docs.microsoft.com/en-us/visualstudio/code-quality/roslyn-analyzers-overview?view=vs-2022)
 * **OmniSharp**: Use Modern .NET
-    * Use OmniSharp biuld for .NET 6. This version **does not** support non-SDK style .NET Framework projects, including Unity. SDK-style Framework, .NET Core, and .NET 5+ projects should see significant performance improvements.
+    * Use OmniSharp build for .NET 6. This version **does not** support non-SDK style .NET Framework projects, including Unity. SDK-style Framework, .NET Core, and .NET 5+ projects should see significant performance improvements.
 
 **JSON Settings**
 ```json
@@ -219,16 +219,16 @@ The following project will demonstrate the most common `dotnet` commands that I 
 The solution will contain the following structure:
 
 * vscode-dotnet/
-    * Crypto.Core/
-        * Crypto.Core.csproj
-        * Crypto.cs
     * Crypto.Cli/
+        * Commands.cs
         * crypto.csproj
             * Project Reference - Crypto.Core
             * Package Reference - [System.CommandLine](https://github.com/dotnet/command-line-api)
             * Package Reference - [System.CommandLine.NamingConventionBinder](https://github.com/dotnet/command-line-api/issues/1537)
         * Program.cs
-        * Commands.cs
+    * Crypto.Core/
+        * Crypto.Core.csproj
+        * Generator.cs
     * Crypto.sln
 
 ### Solution
@@ -259,7 +259,7 @@ This will scaffold out a **Class Library** project and add it to the **Crypto** 
 
 ![dotnet-new-classlib](https://user-images.githubusercontent.com/14102723/170582210-305f0123-a324-4c77-8b7d-23079f939100.png)
 
-Change the name of **Class1.cs** to **Crypto.cs** and provide it with the following code:
+Change the name of **Class1.cs** to **Generaator.cs** and provide it with the following code:
 
 ```cs
 namespace Crypto.Core;
@@ -396,6 +396,7 @@ await root.InvokeAsync(args);
 ```
 
 ### Execution
+[Back to Top](#using-dotnet-in-vs-code)
 
 > In VS Code, the keyboard shortcut <kbd>Ctrl + ~</kbd> will open up the terminal.  
 >
@@ -441,6 +442,7 @@ You should see output similar to the following:
 ![image](https://user-images.githubusercontent.com/14102723/170603489-11dc2aaf-9b48-4c8a-b460-c4774b1e7379.png)
 
 ## Debugging
+[Back to Top](#using-dotnet-in-vs-code)
 
 To generate a debug config, press <kbd>Ctrl + Shift + D</kbd> to open the **Run and Debug** view in the sidebar, then click the *create a launch.json* link:
 
